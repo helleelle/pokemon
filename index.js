@@ -140,7 +140,7 @@ function animate() {
 
     player.draw()
     foreground.draw()
-
+ //activate a battle
     if (keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) {
         for (let i = 0; i < battleZones.length; i++) {
             const battleZone = battleZones[i]
@@ -155,6 +155,7 @@ function animate() {
                     rectangle2: battleZone
                 }) &&
                 overlappingArea > (player.width * player.height) / 2
+                && Math.random() < 0.01
             ) {
                 console.log('battle zone collision')
                 break
